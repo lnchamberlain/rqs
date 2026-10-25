@@ -7,6 +7,9 @@
 *.order
 Module.symvers
 modules.order
+# don't let *.mod swallow Go's module files
+!go.mod
+!go.sum
 # userland binary
 userland/rqs-userland
 # editor / OS cruft
