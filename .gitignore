@@ -1,0 +1,15 @@
+# build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+.*.cmd
+*.order
+Module.symvers
+modules.order
+# userland binary
+userland/rqs-userland
+# editor / OS cruft
+*.swp
+.vscode/
+.DS_Store

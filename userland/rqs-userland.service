@@ -1,0 +1,17 @@
+[Unit]
+Description=RQS userland sensor (reports discoverable PIDs to the RQS scanner)
+After=multi-user.target
+
+[Service]
+Type=simple
+# must be root: reads every /proc/[pid] and writes /proc/rqs_report (0200)
+User=root
+ExecStart=/usr/local/bin/rqs-userland -scanEpoch 5
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=strict
+
+[Install]
+WantedBy=multi-user.target
